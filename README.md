@@ -46,6 +46,7 @@ Java使用 调用微信支付
                 .setTimestamp(时间戳)
                 .builder();
         WxPayManager.getInstance().sendPay(wxPayConfig);
+        
 微信支付回调需要在你的主App中 写一个WXPayEntryActivity并在清单文件中注册，并用广播形式或事件总线程（RXBUS、Eventbus）传送成功或失败
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
@@ -118,6 +119,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     }
 }
 
+
 调用支付宝
 在说调用调用支付宝使用时需要了解，调起支付宝参数有两种形式一种是全部由服务器生成，客户端只需要用服务器生成的参数调起支付，不需要做任务签名生成，这样做的目的是安全所有推荐这种方式，另外一种就是服务器只返回订单信息，客户端需要配置调起支付宝的参数处理，例如签名之类的，先说第一种参数交由服务器来配置的
 参数由服务器生成使用方法
@@ -150,6 +152,7 @@ AliPayConfig aliPayConfig=new AliPayConfig.Builder()
                 .setTimestamp(时间戳)
                 .builder();
         AliPayManager.getInstance().sendPay(aliPayUnSignOrderConfig);
- 
+
+
 
 需要注意的一点就是私钥用的是Rsa2不是Rsa,因为在最新的sdk中RSA已经慢慢淡出了！
