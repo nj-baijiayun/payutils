@@ -10,6 +10,7 @@ payUtils是一个两行代码实现微信支付或支付宝支付的支付库。
 
 allprojects {
     repositories {
+    
         google()
         jcenter()
         maven {
@@ -26,7 +27,8 @@ allprojects {
 2.在dependencies下添加依赖
 
  dependencies {
-    //当前最新版本为1.0.3
+ 
+    //当前最新版本为1.0.0
     implementation 'com.nj.baijiayun:payUtils:1.0.0'
 }
 
@@ -36,7 +38,8 @@ allprojects {
 Java使用 调用微信支付
 
  WxPayConfig wxPayConfig=new WxPayConfig.Builder()
-                 .with(MainActivity.this)
+ 
+                .with(MainActivity.this)
                 .setAppId(应用ID)
                 .setNoncestr(随机字符串)
                 .setPackagex(扩展字段 暂填写固定值Sign=WXPay)
@@ -50,6 +53,7 @@ Java使用 调用微信支付
 微信支付回调需要在你的主App中 写一个WXPayEntryActivity并在清单文件中注册，并用广播形式或事件总线程（RXBUS、Eventbus）传送成功或失败
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
+
     private IWXAPI api;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -126,6 +130,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 
 
 AliPayConfig aliPayConfig=new AliPayConfig.Builder()
+               
                 .with(上下文)
                 .setSignedOrder(服务器返回配置参数)
                 .setmCall(new AliPayStatusCall() {
@@ -139,6 +144,7 @@ AliPayConfig aliPayConfig=new AliPayConfig.Builder()
  服务器只返回订单信息，具体交由客户端来生成参数
  
   AliPayUnSignOrderConfig aliPayUnSignOrderConfig=new AliPayUnSignOrderConfig.Bulider()
+                
                 .with(上下文)
                 .setAPPID(应用Id)
                 .setBody(商品详情)
