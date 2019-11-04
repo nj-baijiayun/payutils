@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
@@ -18,9 +18,17 @@ buildscript {
 
 allprojects {
     repositories {
+//        dirs project(':paylibs').file('libs')
+
+        flatDir {
+//            dirs 'libs'; '../paylibs/libs'
+            dirs project(':paylibs').file('libs')
+
+        }
         google()
         jcenter()
     }
+
 }
 
 task clean(type: Delete) {
