@@ -1,5 +1,10 @@
 # payUtils
 
+#### 更新内容
+
+1. 添加在app端没有下载微信或者支付宝的情况下支付提示下载相应的app客户端
+2.版本更新至 com.nj.baijiayun:payUtils:1.0.1
+
 #### 项目介绍
 payUtils是一个两行代码实现微信支付或支付宝支付的支付库。 应对快速开发利器，让开发变得更加简单
 
@@ -28,8 +33,8 @@ allprojects {
 
  dependencies {
  
-    //当前最新版本为1.0.0
-    implementation 'com.nj.baijiayun:payUtils:1.0.0'
+    //当前最新版本为1.0.1
+    implementation 'com.nj.baijiayun:payUtils:1.0.1'
 }
 
 
