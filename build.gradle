@@ -19,10 +19,9 @@ buildscript {
 allprojects {
     repositories {
 //        dirs project(':paylibs').file('libs')
-
-        flatDir {
-//            dirs 'libs'; '../paylibs/libs'
-            dirs project(':paylibs').file('libs')
+        maven {
+            url = 'http://172.20.2.114:8081/repository/maven-releases/'
+//               url = 'http://172.20.2.114:8081/repository/maven-snapshots/'
 
         }
         google()

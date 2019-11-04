@@ -25,6 +25,8 @@ allprojects {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':paylibs')
+//    implementation project(':paylibs')
+    api "com.nj.baijiayun:payUtils:1.0.2"
+
     implementation 'com.github.w513209188:NewBaseLib:v1.0.4'
 }

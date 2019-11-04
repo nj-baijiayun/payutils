@@ -1,1 +1,1 @@
-include ':app', ':paylibs'
+include ':app', ':paylibs', ':lib_uploadaar'
